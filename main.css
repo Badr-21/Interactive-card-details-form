@@ -1,0 +1,360 @@
+* {
+    box-sizing: 0;
+    margin: 0;
+    padding: 0;
+    /*## Colors
+    ### Primary*/
+    --Linear-gradient /*(active input border)*/: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+    --Red /*(input errors)*/: hsl(0, 100%, 66%);
+    /*### Neutral*/
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: url(images/bg-main-desktop.png) no-repeat left;
+    background-size: 30% 100%;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.container > section {
+    width: 50vw;
+}
+
+.container .image .image-one {
+    height: 15.5rem;
+    width: 28rem;
+    margin: -2rem 0 0 5rem;
+    background: url(images/bg-card-front.png) no-repeat;
+}
+
+.container .image .image-one > p {
+    padding-top: 8rem;
+    padding-left: 2rem;
+    font-size: 2rem;
+    color: var(--White);
+    position: relative;
+}
+
+.container .image .image-one > p::before {
+    content : "";
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--White);
+    top: 10%;
+}
+
+.container .image .image-one > p::after {
+    content : "";
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 0.0625rem solid var(--White);
+    top: 14%;
+    left: 17.5%;
+}
+
+.container .image .image-one > div  {
+    display: flex;
+    padding: 1.5rem 1.5rem 0;
+    justify-content: space-between;
+    color: var(--White);
+}
+
+.container .image .image-two {
+    height: 15.5rem;
+    width: 28rem;
+    margin: 2rem 0 0 10rem;
+    background: url(images/bg-card-back.png) no-repeat;
+    position: relative;
+}
+
+.container .image .image-two p {
+    position: absolute;
+    color: var(--White);
+    top: 45%;
+    left: 80%;
+}
+
+.container .form-details {
+    font-size: 1.125rem;
+    margin-left: 5rem;
+    display: block;
+    color: var(--Very-dark-violet);
+    text-transform: uppercase;
+}
+
+.container .form-details .name,
+.container .form-details .card-number {
+    margin-bottom: 1rem;
+} 
+
+.container .form-details .name input,
+.container .form-details .card-number input {
+    width: 24rem;
+    padding: .5rem 0 .5rem .8rem;
+    margin: .5rem 0;
+    font-size: 1.25rem;
+    outline: none;
+    border: 0.1rem solid var(--Light-grayish-violet);
+    border-radius: .4rem;
+}
+
+.container .form-details .name input:focus,
+.container .form-details .card-number input:focus {
+    border: 0.1rem solid var(--Dark-grayish-violet);
+}
+
+.container .form-details .name input::placeholder,
+.container .form-details .card-number input::placeholder {
+    font-size: 1.25rem;
+}
+
+.container .form-details .date-cvc {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.container .form-details .date-cvc .date {
+    margin-right: 1rem;
+}
+
+.container .form-details .date-cvc .date input,
+.container .form-details .date-cvc .cvc input {
+    padding: .5rem 0 .5rem .8rem;
+    margin: .5rem .4rem .5rem 0;
+    font-size: 1.25rem;
+    outline: none;
+    border: 0.1rem solid var(--Light-grayish-violet);
+    border-radius: .4rem;
+}
+
+.container .form-details .date-cvc .date input {
+    width: 4.5rem;
+}
+
+.container .form-details .date-cvc .cvc input {
+    width: 11rem;
+}
+
+[type=number]::-webkit-outer-spin-button,
+[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.container .form-details button {
+    width: 25rem;
+    padding: 1rem;
+    font-size: 1.25rem;
+    color: var(--White);
+    background-color: var(--Very-dark-violet);
+    border-radius: .4rem;
+    border: none;
+}
+
+.container .form-details p {
+    font-size: 0.875rem; 
+    color: var(--Red);
+    display: none;
+}
+
+.container .thank-you {
+    margin-left: -5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+
+.container .thank-you img {
+    margin-bottom: 2rem;
+}
+
+.container .thank-you h1 {
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    margin-bottom: 1rem;
+    color: var(--Very-dark-violet);
+}
+
+.container .thank-you p {
+    margin-bottom: 2rem;
+    color: var(--Dark-grayish-violet);
+}
+
+.container .thank-you button {
+    width: 20rem;
+    padding: .8rem;
+    background-color: var(--Very-dark-violet);
+    color: var(--White);
+    font-size: 1.25rem;
+    border-radius: .4rem;
+    border: none;
+}
+
+@media(hover: hover) {
+    .container input:hover,
+    .container button:hover {
+        cursor: pointer;
+    } 
+}
+
+@media(max-width: 1065px) {
+    .container .image .image-one {
+        margin: -2rem 0 0 1rem;
+    }
+
+    .container .image .image-two {
+        margin: 2rem 0 0 1rem;
+    }
+
+    .container .form-details {
+        margin-left: 0rem;
+    }
+}
+
+@media(max-width: 945px) {
+
+    body {
+        background: url(images/bg-main-mobile.png) no-repeat;
+        background-size: auto;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .container > section {
+        width: 100vw;
+    }
+
+    .container .image .image-one {
+        height: 9rem;
+        width: 18rem;
+        margin: 0;
+        background-size: cover;
+        border-radius: .4rem;
+        position: absolute;
+        top: 22.5%;
+        left: 4%;
+        z-index: 1;
+    }
+
+    .container .image .image-one > p {
+        padding-top: 5rem;
+        padding-left: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .container .image .image-one > p::before {
+        width: 1.8rem;
+        height: 1.8rem;
+        top: 15%;
+    }
+
+    .container .image .image-one > p::after {
+        width: .7rem;
+        height: .7rem;
+        border-radius: 50%;
+        top: 24%;
+        left: 18.5%;
+    }
+
+    .container .image .image-one > div  {
+        font-size: .6rem;
+        padding: .8rem 1rem 0;
+        color: var(--White);
+    }
+
+    .container .image .image-two {
+        height: 9rem;
+        width: 18rem;
+        margin: 0;
+        border-radius: .4rem;
+        background-size: cover;
+        margin: 2.5rem 0 0 4.2rem ;
+    }
+
+    .container .image .image-two p {
+        top: 50%;
+        left: 80%;
+        font-size: .6rem;
+    }
+
+    .container .form-details {
+        width: calc(100vw - 2.4rem);
+        font-size: .8rem;
+        margin: 8rem auto 0;
+        padding-bottom: 2rem;
+    }
+
+    .container .form-details .name input,
+    .container .form-details .card-number input {
+        width: 20rem;
+        margin: .5rem 0;
+        font-size: 1.1rem;
+    }
+
+    .container .form-details .name input::placeholder,
+    .container .form-details .card-number input::placeholder {
+        font-size: 1.1rem;
+    }
+
+    .container .form-details .date-cvc .date {
+        margin-right: .5rem;
+    }
+
+    .container .form-details .date-cvc .date input,
+    .container .form-details .date-cvc .cvc input {
+        margin: 0;
+        font-size: 1.1rem;
+    }
+
+    .container .form-details .date-cvc .date input {
+        width: 3.6rem;
+    }
+    
+    .container .form-details .date-cvc .cvc input {
+        width: 10rem;
+    }
+
+    .container .form-details button {
+        width: 21rem;
+        padding: .8rem 1rem;
+        font-size: 1.25rem;
+        color: var(--White);
+        background-color: var(--Very-dark-violet);
+        border-radius: .4rem;
+        border: none;
+    }
+
+    .container .thank-you {
+        margin: 9rem 0 2rem;
+        padding-bottom: 2rem;
+    }
+}
